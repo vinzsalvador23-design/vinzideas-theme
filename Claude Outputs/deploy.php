@@ -4,14 +4,14 @@
  * Pulls latest changes from GitHub repository
  */
 
-// Configuration
-$theme_dir = '/public_html/wp-content/themes/vinz-ideas-theme';
+// Configuration - CORRECT PATH
+$theme_dir = '/home/vinzidea/public_html/wp-content/themes/vinz-ideas-theme';
 
 // Check if .git folder exists
 if ( ! is_dir( $theme_dir . '/.git' ) ) {
     http_response_code( 500 );
     echo '<h1>Error: Theme repository not found</h1>';
-    echo '<p>Make sure the theme folder <code>vinz-ideas-theme</code> exists in <code>/public_html/wp-content/themes/</code> and contains a .git folder.</p>';
+    echo '<p>Make sure the theme folder <code>vinz-ideas-theme</code> exists in <code>/home/vinzidea/public_html/wp-content/themes/</code> and contains a .git folder.</p>';
     echo '<p>Theme directory checked: <code>' . htmlspecialchars( $theme_dir ) . '</code></p>';
     exit;
 }

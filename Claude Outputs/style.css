@@ -1,0 +1,707 @@
+/*
+Theme Name: VINZ IDEAS
+Theme URI: https://vinzideas.com
+Author: Robin Salvador
+Author URI: https://vinzideas.com
+Description: A modern, professional WordPress theme for sustainable travel blog
+Version: 1.0.0
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: vinz-ideas
+Domain Path: /languages
+*/
+
+/* ============================================================================
+   CSS Variables & Root Styles
+   ========================================================================== */
+:root {
+	--color-primary: #173D36;
+	--color-secondary: #EBA36A;
+	--color-accent: #2D6A64;
+	--color-light: #F5F5F5;
+	--color-lighter: #FAFAFA;
+	--color-dark: #1a1a1a;
+	--color-text: #333333;
+	--color-text-light: #666666;
+	--color-border: #E0E0E0;
+	--color-white: #FFFFFF;
+
+	--font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	--font-size-base: 16px;
+	--font-size-sm: 14px;
+	--font-size-lg: 18px;
+	--font-size-xl: 24px;
+	--font-size-xxl: 32px;
+
+	--spacing-xs: 4px;
+	--spacing-sm: 8px;
+	--spacing-md: 16px;
+	--spacing-lg: 24px;
+	--spacing-xl: 32px;
+	--spacing-xxl: 48px;
+
+	--container-max-width: 1200px;
+	--container-padding: var(--spacing-lg);
+
+	--transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+	:root {
+		--container-padding: var(--spacing-md);
+		--font-size-xxl: 28px;
+		--spacing-xxl: 32px;
+	}
+}
+
+/* ============================================================================
+   Global Styles
+   ========================================================================== */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: var(--font-size-base);
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-primary);
+	color: var(--color-text);
+	line-height: 1.6;
+	background-color: var(--color-white);
+}
+
+/* ============================================================================
+   Typography
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	line-height: 1.3;
+	margin-bottom: var(--spacing-md);
+	color: var(--color-dark);
+}
+
+h1 {
+	font-size: var(--font-size-xxl);
+}
+
+h2 {
+	font-size: 28px;
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+p {
+	margin-bottom: var(--spacing-md);
+}
+
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+	transition: var(--transition);
+}
+
+a:hover {
+	color: var(--color-secondary);
+	text-decoration: underline;
+}
+
+/* ============================================================================
+   Header & Navigation
+   ========================================================================== */
+.site-header {
+	background-color: var(--color-white);
+	border-bottom: 1px solid var(--color-border);
+	padding: var(--spacing-md) var(--container-padding);
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+	max-width: var(--container-max-width);
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing-lg);
+}
+
+.site-branding {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	flex: 1;
+}
+
+.site-branding img {
+	height: 50px;
+	width: auto;
+}
+
+.site-title-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.site-title {
+	font-size: var(--font-size-xl);
+	margin: 0;
+	font-weight: 700;
+}
+
+.site-title a {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+.site-title a:hover {
+	color: var(--color-secondary);
+}
+
+.site-description {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-light);
+	margin: 0;
+	font-weight: 400;
+}
+
+/* Main Navigation */
+.main-navigation {
+	display: flex;
+	align-items: center;
+}
+
+.menu-toggle {
+	display: none;
+	background: none;
+	border: none;
+	font-size: 24px;
+	cursor: pointer;
+	color: var(--color-primary);
+	padding: var(--spacing-sm) var(--spacing-md);
+	line-height: 1;
+}
+
+.menu-toggle:hover {
+	color: var(--color-secondary);
+}
+
+.main-navigation ul {
+	list-style: none;
+	display: flex;
+	gap: var(--spacing-lg);
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	color: var(--color-text);
+	font-weight: 500;
+	padding: var(--spacing-sm) var(--spacing-md);
+	display: block;
+	transition: var(--transition);
+	text-decoration: none;
+}
+
+.main-navigation a:hover,
+.main-navigation .current-menu-item > a {
+	color: var(--color-primary);
+}
+
+.main-navigation .current-menu-item > a {
+	font-weight: 700;
+}
+
+/* Submenu */
+.main-navigation ul ul {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	flex-direction: column;
+	background-color: var(--color-white);
+	border: 1px solid var(--color-border);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	display: none;
+	gap: 0;
+	min-width: 200px;
+	padding: var(--spacing-md) 0;
+	margin: 0;
+}
+
+.main-navigation li:hover > ul {
+	display: flex;
+}
+
+.main-navigation ul ul a {
+	padding: var(--spacing-md) var(--spacing-lg);
+	white-space: nowrap;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+	.header-container {
+		flex-wrap: wrap;
+		gap: var(--spacing-md);
+	}
+
+	.site-branding {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.site-title {
+		font-size: 20px;
+	}
+
+	.site-description {
+		display: none;
+	}
+
+	.menu-toggle {
+		display: block;
+	}
+
+	.main-navigation ul {
+		position: fixed;
+		left: -100%;
+		top: 70px;
+		flex-direction: column;
+		background-color: var(--color-white);
+		width: 100%;
+		text-align: left;
+		transition: left 0.3s ease;
+		box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+		padding: var(--spacing-lg) 0;
+		gap: 0;
+		border-radius: 0;
+		z-index: 999;
+	}
+
+	.main-navigation.active ul {
+		left: 0;
+	}
+
+	.main-navigation ul li {
+		width: 100%;
+	}
+
+	.main-navigation ul li a {
+		padding: var(--spacing-md) var(--spacing-lg);
+		border-bottom: 1px solid var(--color-light);
+	}
+
+	.main-navigation ul ul {
+		position: static;
+		display: none;
+		box-shadow: none;
+		border: none;
+		padding: 0;
+		background-color: var(--color-lighter);
+	}
+
+	.main-navigation ul li:hover > ul {
+		display: flex;
+	}
+
+	.main-navigation ul ul a {
+		padding: var(--spacing-md) var(--spacing-xl);
+	}
+}
+
+/* ============================================================================
+   Main Content Area
+   ========================================================================== */
+.site-main {
+	max-width: var(--container-max-width);
+	margin: 0 auto;
+	padding: var(--spacing-xxl) var(--container-padding);
+}
+
+main {
+	display: block;
+}
+
+/* Article/Post Styles */
+article {
+	margin-bottom: var(--spacing-xxl);
+}
+
+.entry-header {
+	margin-bottom: var(--spacing-lg);
+}
+
+.entry-title {
+	margin-bottom: var(--spacing-md);
+	font-size: var(--font-size-xxl);
+}
+
+.entry-meta {
+	font-size: var(--font-size-sm);
+	color: var(--color-text-light);
+	margin-bottom: var(--spacing-lg);
+}
+
+.entry-meta a {
+	color: var(--color-primary);
+}
+
+.entry-meta span {
+	margin-right: var(--spacing-md);
+	display: inline-block;
+}
+
+.entry-content {
+	line-height: 1.8;
+	font-size: 16px;
+}
+
+.entry-content img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: var(--spacing-lg) 0;
+}
+
+.entry-content p {
+	margin-bottom: var(--spacing-md);
+}
+
+/* ============================================================================
+   Sections & Regions
+   ========================================================================== */
+section,
+[role="region"] {
+	padding: var(--spacing-xxl) var(--container-padding);
+	max-width: var(--container-max-width);
+	margin: 0 auto;
+}
+
+section > h2,
+[role="region"] > h2 {
+	text-align: center;
+	margin-bottom: var(--spacing-xl);
+}
+
+section > [role="region"],
+[role="region"] > [role="region"] {
+	padding: 0;
+	max-width: none;
+	margin: 0;
+}
+
+.section-title {
+	text-align: center;
+	margin-bottom: var(--spacing-xl);
+}
+
+.section-title h2 {
+	margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+	color: var(--color-text-light);
+	font-size: var(--font-size-lg);
+}
+
+/* ============================================================================
+   Buttons
+   ========================================================================== */
+.btn,
+button,
+input[type="button"],
+input[type="submit"],
+.wp-block-button__link {
+	display: inline-block;
+	padding: var(--spacing-md) var(--spacing-lg);
+	background-color: var(--color-primary);
+	color: var(--color-white);
+	border: 2px solid var(--color-primary);
+	border-radius: 4px;
+	font-size: var(--font-size-base);
+	font-weight: 600;
+	cursor: pointer;
+	transition: var(--transition);
+	text-decoration: none;
+}
+
+.btn:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+.wp-block-button__link:hover {
+	background-color: var(--color-accent);
+	border-color: var(--color-accent);
+	color: var(--color-white);
+	text-decoration: none;
+}
+
+.btn-secondary {
+	background-color: var(--color-secondary);
+	border-color: var(--color-secondary);
+	color: var(--color-white);
+}
+
+.btn-secondary:hover {
+	background-color: #D89856;
+	border-color: #D89856;
+}
+
+.btn-outline {
+	background-color: transparent;
+	color: var(--color-primary);
+}
+
+.btn-outline:hover {
+	background-color: var(--color-primary);
+	color: var(--color-white);
+}
+
+/* ============================================================================
+   Forms
+   ========================================================================== */
+form {
+	margin-bottom: var(--spacing-lg);
+}
+
+label {
+	display: block;
+	margin-bottom: var(--spacing-sm);
+	font-weight: 600;
+	color: var(--color-text);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+textarea,
+select {
+	width: 100%;
+	max-width: 100%;
+	padding: var(--spacing-md);
+	margin-bottom: var(--spacing-md);
+	border: 1px solid var(--color-border);
+	border-radius: 4px;
+	font-family: var(--font-primary);
+	font-size: var(--font-size-base);
+	transition: var(--transition);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px rgba(23, 61, 54, 0.1);
+}
+
+textarea {
+	resize: vertical;
+	min-height: 120px;
+}
+
+/* ============================================================================
+   Cards & Boxes
+   ========================================================================== */
+.card {
+	background-color: var(--color-white);
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	padding: var(--spacing-lg);
+	transition: var(--transition);
+}
+
+.card:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transform: translateY(-2px);
+}
+
+.card img {
+	width: 100%;
+	height: auto;
+	margin: calc(-1 * var(--spacing-lg)) calc(-1 * var(--spacing-lg)) var(--spacing-lg) calc(-1 * var(--spacing-lg));
+	border-radius: 8px 8px 0 0;
+}
+
+/* ============================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+	background-color: var(--color-primary);
+	color: var(--color-white);
+	padding: var(--spacing-xxl) var(--container-padding);
+	margin-top: var(--spacing-xxl);
+}
+
+.site-footer a {
+	color: var(--color-secondary);
+	text-decoration: none;
+}
+
+.site-footer a:hover {
+	color: var(--color-white);
+	text-decoration: underline;
+}
+
+.site-info {
+	max-width: var(--container-max-width);
+	margin: 0 auto;
+	text-align: center;
+}
+
+.site-info p {
+	margin-bottom: var(--spacing-md);
+}
+
+/* ============================================================================
+   Utilities
+   ========================================================================== */
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.mt-0 { margin-top: 0; }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+.p-0 { padding: 0; }
+.p-sm { padding: var(--spacing-sm); }
+.p-md { padding: var(--spacing-md); }
+.p-lg { padding: var(--spacing-lg); }
+.p-xl { padding: var(--spacing-xl); }
+
+/* ============================================================================
+   Responsive Styles
+   ========================================================================== */
+@media (max-width: 768px) {
+	h1 {
+		font-size: 24px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+
+	h3 {
+		font-size: 20px;
+	}
+
+	section,
+	[role="region"] {
+		padding: var(--spacing-xl) var(--container-padding);
+	}
+
+	.btn,
+	button,
+	input[type="button"],
+	input[type="submit"] {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.site-header {
+		padding: var(--spacing-md);
+	}
+
+	.site-main {
+		padding: var(--spacing-lg) var(--container-padding);
+	}
+
+	h1 {
+		font-size: 20px;
+	}
+
+	h2 {
+		font-size: 18px;
+	}
+
+	section,
+	[role="region"] {
+		padding: var(--spacing-lg) var(--container-padding);
+	}
+}
+
+/* ============================================================================
+   WordPress Specific Styles
+   ========================================================================== */
+.wp-block-button__link {
+	padding: var(--spacing-md) var(--spacing-lg);
+	border-radius: 4px;
+	text-decoration: none;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignnone {
+	margin: var(--spacing-md) 0;
+}
+
+.alignleft {
+	float: left;
+	margin-right: var(--spacing-lg);
+	margin-bottom: var(--spacing-md);
+}
+
+.alignright {
+	float: right;
+	margin-left: var(--spacing-lg);
+	margin-bottom: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+	.alignleft,
+	.alignright {
+		float: none;
+		margin: var(--spacing-md) 0;
+	}
+}
