@@ -27,7 +27,6 @@ get_header(); ?>
                 $featured_posts = new WP_Query( array(
                     'posts_per_page' => 3,
                     'post_type'      => 'post',
-                    'post_status'    => 'publish',
                     'orderby'        => 'date',
                     'order'          => 'DESC',
                 ) );
@@ -60,7 +59,7 @@ get_header(); ?>
                     endwhile;
                     wp_reset_postdata();
                 else :
-                    echo '<p style="text-align: center; padding: 2rem;">No featured stories yet. Create your first post to get started!</p>';
+                    echo '<p style="text-align: center; padding: 2rem; color: #999;">No published posts yet. Posts will appear here once created.</p>';
                 endif;
                 ?>
             </div>
@@ -88,7 +87,6 @@ get_header(); ?>
                 $blog_posts = new WP_Query( array(
                     'posts_per_page' => 5,
                     'post_type'      => 'post',
-                    'post_status'    => 'publish',
                     'orderby'        => 'date',
                     'order'          => 'DESC',
                 ) );
