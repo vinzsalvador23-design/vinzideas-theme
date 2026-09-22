@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php if ( is_front_page() ) : ?>
+<?php if ( is_front_page() || ( is_home() && !is_paged() ) ) : ?>
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
@@ -24,20 +24,12 @@ get_header(); ?>
             
             <div class="stories-grid">
                 <?php
-                // Debug: Check total posts in database
-                $all_posts_count = wp_count_posts( 'post' );
-                $debug_info = "Debug - Total posts: " . json_encode( $all_posts_count );
-                
                 $featured_posts = new WP_Query( array(
                     'posts_per_page' => 3,
                     'post_type'      => 'post',
                     'orderby'        => 'date',
                     'order'          => 'DESC',
                 ) );
-
-                // Debug output
-                echo '<!-- ' . $debug_info . ' -->' . "\n";
-                echo '<!-- Featured posts found: ' . $featured_posts->found_posts . ' -->' . "\n";
 
                 if ( $featured_posts->have_posts() ) :
                     while ( $featured_posts->have_posts() ) :
@@ -67,7 +59,7 @@ get_header(); ?>
                     endwhile;
                     wp_reset_postdata();
                 else :
-                    echo '<p style="text-align: center; padding: 2rem; color: #999;">No posts found. Total posts in DB: ' . $all_posts_count->publish . ' published, ' . $all_posts_count->draft . ' draft</p>';
+                    echo '<p style="text-align: center; padding: 2rem; color: #999;">No posts found.</p>';
                 endif;
                 ?>
             </div>
@@ -118,8 +110,8 @@ get_header(); ?>
         </section>
     </div>
 
-<?php else : ?>
-
+<?php elseif ( is_single() ) : ?>
+    <!-- Single Post Template -->
     <div class="container">
         <main>
             <?php
@@ -131,7 +123,7 @@ get_header(); ?>
                         <header class="entry-header">
                             <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                             <div class="entry-meta">
-                                <?php vinzideas_posted_meta(); ?>
+                                <?php echo get_the_date( 'M d, Y' ); ?> | By <?php the_author(); ?>
                             </div>
                         </header>
 
@@ -143,18 +135,41 @@ get_header(); ?>
 
                         <div class="entry-content">
                             <?php
-                            the_content( sprintf(
-                                wp_kses(
-                                    __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'vinz-ideas-theme' ),
-                                    array( 'span' => array( 'class' => array() ) )
-                                ),
-                                wp_kses_post( get_the_title() )
-                            ) );
+                            the_content();
                             wp_link_pages( array(
                                 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'vinz-ideas-theme' ),
                                 'after'  => '</div>',
                             ) );
                             ?>
+                        </div>
+                    </article>
+                    <?php
+                endwhile;
+            endif;
+            ?>
+        </main>
+    </div>
+
+<?php else : ?>
+    <!-- Archive/Category Template -->
+    <div class="container">
+        <main>
+            <h1><?php wp_title( '' ); ?></h1>
+            <?php
+            if ( have_posts() ) :
+                while ( have_posts() ) :
+                    the_post();
+                    ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <header class="entry-header">
+                            <?php the_title( '<h2><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' ); ?>
+                            <div class="entry-meta">
+                                <?php echo get_the_date( 'M d, Y' ); ?>
+                            </div>
+                        </header>
+                        <div class="entry-content">
+                            <?php echo wp_trim_words( get_the_excerpt(), 50 ); ?>
+                            <a href="<?php the_permalink(); ?>" class="read-more">Continue reading →</a>
                         </div>
                     </article>
                     <?php
