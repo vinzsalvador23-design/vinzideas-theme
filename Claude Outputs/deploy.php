@@ -21,7 +21,7 @@ chdir( $theme_dir );
 
 // Execute git pull
 $output = shell_exec( 'git fetch origin main 2>&1' );
-$output .= shell_exec( 'git pull origin main 2>&1' );
+$output .= shell_exec( 'git reset --hard origin/main 2>&1' );
 
 // Set proper permissions
 shell_exec( 'chmod -R 755 ' . escapeshellarg( $theme_dir ) );
