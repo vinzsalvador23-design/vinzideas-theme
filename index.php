@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<?php if ( is_front_page() || ( is_home() && is_front_page() ) ) : ?>
+<?php if ( is_front_page() ) : ?>
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
@@ -26,6 +26,8 @@ get_header(); ?>
                 <?php
                 $featured_posts = new WP_Query( array(
                     'posts_per_page' => 3,
+                    'post_type'      => 'post',
+                    'post_status'    => 'publish',
                     'orderby'        => 'date',
                     'order'          => 'DESC',
                 ) );
@@ -58,7 +60,7 @@ get_header(); ?>
                     endwhile;
                     wp_reset_postdata();
                 else :
-                    echo '<p>No featured stories yet.</p>';
+                    echo '<p style="text-align: center; padding: 2rem;">No featured stories yet. Create your first post to get started!</p>';
                 endif;
                 ?>
             </div>
@@ -85,6 +87,8 @@ get_header(); ?>
                 <?php
                 $blog_posts = new WP_Query( array(
                     'posts_per_page' => 5,
+                    'post_type'      => 'post',
+                    'post_status'    => 'publish',
                     'orderby'        => 'date',
                     'order'          => 'DESC',
                 ) );
