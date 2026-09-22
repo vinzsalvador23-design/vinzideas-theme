@@ -24,12 +24,20 @@ get_header(); ?>
             
             <div class="stories-grid">
                 <?php
+                // Debug: Check total posts in database
+                $all_posts_count = wp_count_posts( 'post' );
+                $debug_info = "Debug - Total posts: " . json_encode( $all_posts_count );
+                
                 $featured_posts = new WP_Query( array(
                     'posts_per_page' => 3,
                     'post_type'      => 'post',
                     'orderby'        => 'date',
                     'order'          => 'DESC',
                 ) );
+
+                // Debug output
+                echo '<!-- ' . $debug_info . ' -->' . "\n";
+                echo '<!-- Featured posts found: ' . $featured_posts->found_posts . ' -->' . "\n";
 
                 if ( $featured_posts->have_posts() ) :
                     while ( $featured_posts->have_posts() ) :
@@ -59,7 +67,7 @@ get_header(); ?>
                     endwhile;
                     wp_reset_postdata();
                 else :
-                    echo '<p style="text-align: center; padding: 2rem; color: #999;">No published posts yet. Posts will appear here once created.</p>';
+                    echo '<p style="text-align: center; padding: 2rem; color: #999;">No posts found. Total posts in DB: ' . $all_posts_count->publish . ' published, ' . $all_posts_count->draft . ' draft</p>';
                 endif;
                 ?>
             </div>
