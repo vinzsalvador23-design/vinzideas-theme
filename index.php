@@ -13,10 +13,10 @@ get_header();
 		<!-- SECTION 1: Hero Section -->
 		<section class="hero">
 			<div class="hero-content">
-				<h1><?php bloginfo( 'name' ); ?></h1>
-				<p class="hero-tagline"><?php bloginfo( 'description' ); ?></p>
+				<h1>Go Beyond the Familiar</h1>
+				<p class="hero-tagline">Discover untold stories from Asia's most captivating destinations</p>
 				<div class="hero-cta">
-					<a href="#stories" class="btn btn-primary">Read Stories</a>
+					<a href="<?php echo esc_url( home_url( '/#stories' ) ); ?>" class="btn btn-primary">Explore Destinations</a>
 					<a href="<?php echo esc_url( home_url( '/work-with-us' ) ); ?>" class="btn btn-secondary">Work With Us</a>
 				</div>
 			</div>
@@ -67,7 +67,7 @@ get_header();
 				<h2 class="section-title">Explore Destinations</h2>
 				<div class="destinations-grid">
 					<?php
-					$categories = array( 'blog', 'travel-tips', 'travel', 'travel-in-asia', 'inspirational-2', 'christianity' );
+					$categories = array( 'travel-in-philippines', 'thailand', 'vietnam', 'travel-in-singapore', 'cambodia', 'travel-in-malaysia' );
 					foreach ( $categories as $cat_slug ) :
 						$category = get_category_by_slug( $cat_slug );
 						if ( $category ) :

@@ -141,9 +141,11 @@ a:hover {
 	max-width: var(--container-max-width);
 	margin: 0 auto;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	gap: var(--spacing-lg);
+	padding: var(--spacing-xl) var(--container-padding);
 }
 
 .site-branding {
@@ -156,6 +158,43 @@ a:hover {
 .site-branding img {
 	height: 50px;
 	width: auto;
+}
+
+.site-logo {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	transition: transform 0.3s ease;
+}
+
+.site-logo:hover {
+	transform: scale(1.05);
+}
+
+.logo-image {
+	height: 50px;
+	width: 50px;
+	display: block;
+}
+
+/* WordPress Custom Logo */
+.custom-logo-link {
+	display: inline-flex;
+	align-items: center;
+	margin-right: var(--spacing-md);
+	text-decoration: none;
+	transition: transform 0.3s ease;
+}
+
+.custom-logo-link:hover {
+	transform: scale(1.05);
+}
+
+.custom-logo {
+	height: 120px !important;
+	width: auto !important;
+	display: block;
+	max-width: 100%;
 }
 
 .site-title-wrapper {
@@ -228,6 +267,7 @@ a:hover {
 	display: block;
 	transition: var(--transition);
 	text-decoration: none;
+	font-size: var(--font-size-lg);
 }
 
 .main-navigation a:hover,
@@ -496,7 +536,7 @@ input[type="submit"]:hover,
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 0;
+	margin-top: var(--spacing-xxl);
 }
 
 .hero-content {

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkok 2026 Budget Travel Guide - Cost Breakdown & Itinerary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066cc;
+            --secondary: #00a86b;
+            --warning: #ff6b35;
+            --light: #f5f5f5;
+            --dark: #1a1a1a;
+            --text: #333;
+            --border: #e0e0e0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #e0e0e0;
+                --light: #222;
+                --border: #444;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .nav-tabs button {
+            background: none;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-tabs button.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cost-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .cost-item.warning {
+            border-left-color: var(--warning);
+        }
+
+        .cost-item.success {
+            border-left-color: var(--secondary);
+        }
+
+        .cost-label {
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .cost-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .cost-item.warning .cost-value {
+            color: var(--warning);
+        }
+
+        .cost-item.success .cost-value {
+            color: var(--secondary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            table {
+                background: #333;
+            }
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: rgba(0,0,0,0.02);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            tr:hover {
+                background: rgba(255,255,255,0.05);
+            }
+        }
+
+        .calculator-section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .calculator-section {
+                background: #333;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+            background: var(--light);
+            color: var(--text);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .result-box {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-top: 0.5rem;
+        }
+
+        .itinerary {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .itinerary-day {
+            background: white;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .itinerary-day {
+                background: #333;
+            }
+        }
+
+        .itinerary-day h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(0,102,204,0.1), rgba(0,168,107,0.1));
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .tips {
+            background: rgba(255, 107, 53, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .tips strong {
+            color: var(--warning);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #999;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🏯 Bangkok 2026 Budget Travel Guide</h1>
+        <p>Complete Cost Breakdown, Street Food Paradise & Interactive Budget Calculator</p>
+    </header>
+
+    <div class="container">
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="costs">Costs</button>
+            <button class="tab-btn" data-tab="calculator">Calculator</button>
+            <button class="tab-btn" data-tab="itinerary">Itinerary</button>
+            <button class="tab-btn" data-tab="tips">Tips</button>
+        </div>
+
+        <!-- OVERVIEW TAB -->
+        <div id="overview" class="tab-content active">
+            <section>
+                <h2>Welcome to Bangkok: The City of Angels</h2>
+                <p>Bangkok is one of Southeast Asia's most vibrant, chaotic, and exciting cities. Known for its ornate temples, delicious street food, thriving nightlife, and bustling markets, Bangkok offers incredible value for budget travelers. In 2026, Bangkok remains remarkably affordable compared to Western cities, with daily budgets as low as $25-35 for backpackers.</p>
+
+                <h3>Why Visit Bangkok in 2026?</h3>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Incredible Street Food:</strong> World's best street food at unbeatable prices ($0.50-2 per dish)</li>
+                    <li><strong>Budget Accommodation:</strong> Dorm beds as low as $7-10/night in great locations</li>
+                    <li><strong>Ancient Temples:</strong> Thousands of ornate Buddhist temples, many free to explore</li>
+                    <li><strong>Vibrant Nightlife:</strong> Sky bars, night markets, go-go bars, club scene</li>
+                    <li><strong>Shopping Paradise:</strong> Floating markets, weekend markets, malls with endless options</li>
+                    <li><strong>Cheap Transportation:</strong> Taxis, tuktuks, BTS train at fraction of Western prices</li>
+                </ul>
+
+                <div class="highlight">
+                    <strong>Quick Facts:</strong>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Location: Capital of Thailand</li>
+                        <li>Currency: Thai Baht (THB) - 1 USD ≈ 33-35 THB (2026 rates)</li>
+                        <li>Average Daily Budget: $25-35 (backpacker), $60-100 (mid-range), $150+ (luxury)</li>
+                        <li>Languages: Thai, some English in tourist areas</li>
+                        <li>Best Time: November-February (cool & dry)</li>
+                        <li>Visa: 30 days visa-free for many nationalities</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Getting to Bangkok</h2>
+                <h3>By Air</h3>
+                <p>Suvarnabhumi International Airport (BKK) is Thailand's main airport. Budget airlines (AirAsia, Nok Air, Thai AirAsia) offer cheap flights throughout Southeast Asia.</p>
+
+                <p><strong>Flight Costs (2026):</strong></p>
+                <ul style="margin-left: 1.5rem;">
+                    <li>International flights: $300-700 (depending on origin)</li>
+                    <li>Regional flights: $30-80 from nearby Southeast Asian cities</li>
+                    <li>Airport to city: Airport bus $3, airport rail $3-4, taxi $12-25</li>
+                </ul>
+
+                <h3>By Bus/Train</h3>
+                <p>Bangkok is a Southeast Asia hub. Buses from Chiang Mai, Phuket, Cambodia, Laos ($10-35), trains from northern Thailand ($5-15).</p>
+            </section>
+        </div>
+
+        <!-- COSTS TAB -->
+        <div id="costs" class="tab-content">
+            <section>
+                <h2>2026 Bangkok Cost Breakdown</h2>
+
+                <h3>Daily Expenses by Budget Level</h3>
+                <div class="cost-grid">
+                    <div class="cost-item">
+                        <div class="cost-label">Backpacker Budget</div>
+                        <div class="cost-value">$25-40</div>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Dorms, street food, free attractions</p>
+                    </div>
+                    <div class="cost-item warning">
+                        <div class="cost-label">Mid-Range</div>
+                        <div class="cost-value">$70-120</div>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Private room, local restaurants, activities</p>
+                    </div>
+                    <div class="cost-item success">
+                        <div class="cost-label">Luxury</div>
+                        <div class="cost-value">$150+</div>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem;">4-5 star hotels, upscale dining</p>
+                    </div>
+                </div>
+
+                <h3>Accommodation Costs</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>2026 Price (USD)</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dorm Room</strong></td>
+                            <td>$7-12/night</td>
+                            <td>Social hostels, Khao San Road, Bangkok area</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Budget Private Room</strong></td>
+                            <td>$15-25/night</td>
+                            <td>Fan room, shared bathroom, basic amenities</td>
+                        </tr>
+                        <tr>
+                            <td><strong>A/C Private Room</strong></td>
+                            <td>$20-40/night</td>
+                            <td>With A/C, private bathroom</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Budget Hotel</strong></td>
+                            <td>$30-60/night</td>
+                            <td>Basic 2-star hotel with breakfast</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mid-Range Hotel</strong></td>
+                            <td>$50-100/night</td>
+                            <td>3-4 star, good location, decent amenities</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5-Star Luxury</strong></td>
+                            <td>$150-400+/night</td>
+                            <td>Top hotels like Mandarin Oriental, Four Seasons</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Food & Dining Costs</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>2026 Price (USD)</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Street Food Stall</strong></td>
+                            <td>$0.50-1.50</td>
+                            <td>Pad Thai, satay, mango sticky rice, crepes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Local Eatery Meal</strong></td>
+                            <td>$1-3</td>
+                            <td>Full rice plate with curry, vegetables, soup</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Market Meal</strong></td>
+                            <td>$2-4</td>
+                            <td>Floating market food, fresh seafood</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mid-Range Restaurant</strong></td>
+                            <td>$5-12</td>
+                            <td>Nice ambiance, Thai or international cuisine</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tourist Restaurant</strong></td>
+                            <td>$10-25</td>
+                            <td>Rooftop bars, nice dining experiences</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Daily Food Budget</strong></td>
+                            <td>$6-10</td>
+                            <td>Mix of street food and local restaurants</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Activities & Attractions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>2026 Cost (USD)</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Grand Palace & Wat Phra Kaew</strong></td>
+                            <td>$15</td>
+                            <td>Thailand's most sacred temple complex</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wat Pho (Reclining Buddha)</strong></td>
+                            <td>$4-5</td>
+                            <td>Iconic giant reclining Buddha statue</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tuk-Tuk Tour</strong></td>
+                            <td>$10-20</td>
+                            <td>3-4 hour guided tour with local driver</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Floating Market Tour</strong></td>
+                            <td>$15-25</td>
+                            <td>Half or full day boat tour</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thai Massage</strong></td>
+                            <td>$5-8</td>
+                            <td>Full body 1-hour traditional massage</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Muay Thai Show</strong></td>
+                            <td>$15-30</td>
+                            <td>Professional boxing match evening show</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rooftop Sky Bar</strong></td>
+                            <td>$8-15</td>
+                            <td>Drinks with city views</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Weekend Market</strong></td>
+                            <td>FREE</td>
+                            <td>Massive Chatuchak market exploration</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Transportation Costs</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transport</th>
+                            <th>2026 Cost (USD)</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>BTS Skytrain Ride</strong></td>
+                            <td>$0.60-1.30</td>
+                            <td>Modern elevated train system</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MRT (Subway) Ride</strong></td>
+                            <td>$0.50-1</td>
+                            <td>Underground metro system</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bus Ride</strong></td>
+                            <td>$0.20-0.60</td>
+                            <td>Local or air-conditioned buses</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tuk-Tuk Ride</strong></td>
+                            <td>$1.50-4</td>
+                            <td>Traditional three-wheeler taxi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Taxi Ride</strong></td>
+                            <td>$2-8</td>
+                            <td>Metered taxi (insist on meter!)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BTS/MRT Day Pass</strong></td>
+                            <td>$2-4</td>
+                            <td>Unlimited travel for 24 hours</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- CALCULATOR TAB -->
+        <div id="calculator" class="tab-content">
+            <section>
+                <h2>Bangkok Trip Budget Calculator</h2>
+                <p>Calculate your estimated Bangkok travel costs.</p>
+
+                <div class="calculator-section">
+                    <div class="form-group">
+                        <label for="days">Number of Days in Bangkok:</label>
+                        <input type="number" id="days" value="5" min="1" max="30">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="accommodation">Accommodation Type:</label>
+                        <select id="accommodation">
+                            <option value="10">Dorm ($10/night)</option>
+                            <option value="20">Budget Private Room ($20/night)</option>
+                            <option value="45">Budget Hotel ($45/night)</option>
+                            <option value="75">Mid-Range Hotel ($75/night)</option>
+                            <option value="200">Luxury Hotel ($200/night)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dining">Daily Dining Budget:</label>
+                        <select id="dining">
+                            <option value="8">Street Food ($8/day)</option>
+                            <option value="20">Backpacker Mix ($20/day)</option>
+                            <option value="50">Mid-Range Dining ($50/day)</option>
+                            <option value="100">Upscale ($100/day)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activities">Daily Activity Budget:</label>
+                        <select id="activities">
+                            <option value="0">Free Activities</option>
+                            <option value="15">Basic Activities ($15/day)</option>
+                            <option value="40">Good Mix ($40/day)</option>
+                            <option value="80">Premium ($80/day)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="other">Daily Other Expenses:</label>
+                        <input type="number" id="other" value="5" min="0">
+                    </div>
+
+                    <button onclick="calculateBudget()">Calculate Total</button>
+
+                    <div id="result" class="result-box" style="display:none;">
+                        <strong>Your Estimated Total Cost:</strong>
+                        <div class="result-value" id="totalCost">$0</div>
+                        <p style="margin-top: 1rem;">
+                            <strong>Breakdown:</strong><br>
+                            Accommodation: <span id="accCost">$0</span><br>
+                            Dining: <span id="diningCost">$0</span><br>
+                            Activities: <span id="actCost">$0</span><br>
+                            Other: <span id="otherCost">$0</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ITINERARY TAB -->
+        <div id="itinerary" class="tab-content">
+            <section>
+                <h2>Perfect 4-Day Bangkok Itinerary</h2>
+                <p>Temples, markets, street food, and nightlife. Estimated cost: $100-150 per person.</p>
+
+                <div class="itinerary">
+                    <div class="itinerary-day">
+                        <h4>Day 1: Old Bangkok & Temples</h4>
+                        <p><strong>Morning:</strong> Visit Grand Palace and Wat Phra Kaew ($15). Dress modestly (long pants/skirt, covered shoulders).</p>
+                        <p><strong>Afternoon:</strong> Wat Pho with reclining Buddha ($5). Walk across Chao Phraya River to explore local markets.</p>
+                        <p><strong>Evening:</strong> Street food dinner in Chinatown. Budget: $25-35</p>
+                    </div>
+
+                    <div class="itinerary-day">
+                        <h4>Day 2: Markets & Local Culture</h4>
+                        <p><strong>Early Morning:</strong> Damnoen Saduak Floating Market (2-hour boat tour, $15-20). See vendors in traditional long-tail boats.</p>
+                        <p><strong>Afternoon:</strong> Rest or explore Jim Thompson's House museum ($10).</p>
+                        <p><strong>Evening:</strong> Muay Thai boxing match ($20-25) or local beer garden. Budget: $50-65</p>
+                    </div>
+
+                    <div class="itinerary-day">
+                        <h4>Day 3: Modern Bangkok & Shopping</h4>
+                        <p><strong>Morning:</strong> Chatuchak Weekend Market (largest market in the world, free to explore). Browse 15,000+ stalls.</p>
+                        <p><strong>Afternoon:</strong> Mall of Bangkok or Emporium (air-conditioned shopping). Thai massage session ($6-8).</p>
+                        <p><strong>Evening:</strong> Rooftop bar with city views for drinks and sunset ($10-15). Budget: $35-50</p>
+                    </div>
+
+                    <div class="itinerary-day">
+                        <h4>Day 4: River & Departure</h4>
+                        <p><strong>Morning:</strong> Chao Phraya River cruise ($5-10). Visit Wat Arun (Temple of Dawn) ($4).</p>
+                        <p><strong>Afternoon:</strong> Last-minute shopping at street markets or malls.</p>
+                        <p><strong>Evening:</strong> Departure or extend stay. Budget: $20-30</p>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <strong>Alternative: 7-Day Deep Dive Bangkok</strong>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Days 1-4: Same as above</li>
+                        <li>Day 5: Day trip to Ayutthaya ancient capital (2-hour train) or Khao Yai National Park</li>
+                        <li>Day 6: Relaxation, spa day, street food crawl</li>
+                        <li>Day 7: Pack shopping, goodbyes, depart</li>
+                        <li>Estimated cost: $250-350 for 7 days</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- TIPS TAB -->
+        <div id="tips" class="tab-content">
+            <section>
+                <h2>Money-Saving Tips & Essential Info</h2>
+
+                <h3>Food Savings</h3>
+                <div class="tips">
+                    <strong>🍜 Eat Only Street Food:</strong> Street food vendors have the cheapest, most authentic food. Pad Thai, satay, mango sticky rice all under $2.
+                </div>
+
+                <div class="tips">
+                    <strong>🍜 Markets for Meals:</strong> Floating markets and weekend markets have food stalls cheaper than restaurants.
+                </div>
+
+                <div class="tips">
+                    <strong>🍜 Breakfast Special:</strong> Jok (rice porridge) or dosas for $1-2 are perfect cheap breakfasts.
+                </div>
+
+                <h3>Transportation Hacks</h3>
+                <div class="tips">
+                    <strong>🚇 Insist on Meter in Taxis:</strong> Always ask taxi drivers to use the meter. Pre-agreed prices are scams.
+                </div>
+
+                <div class="tips">
+                    <strong>🚇 Use BTS & MRT:</strong> Fastest and cheapest way around Bangkok. Modern, clean, English signage.
+                </div>
+
+                <div class="tips">
+                    <strong>🚇 Tuk-Tuks for Short Distances:</strong> Tuk-tuks fun but negotiate price first (no meter). For longer distances, use taxi with meter.
+                </div>
+
+                <h3>Accommodation Tips</h3>
+                <div class="tips">
+                    <strong>🏨 Khao San Road is Cliché But Cheap:</strong> Famous backpacker street has best prices and social atmosphere.
+                </div>
+
+                <div class="tips">
+                    <strong>🏨 Dorms are Social:</strong> Great way to meet other travelers. Most Bangkok hostels offer group activities and tours.
+                </div>
+
+                <div class="tips">
+                    <strong>🏨 Airbnb Private Rooms:</strong> Sometimes cheaper than hotels in same area ($20-35/night).
+                </div>
+
+                <h3>Tourist Scams to Avoid</h3>
+                <div class="tips">
+                    <strong>⚠️ Closed Temple Scam:</strong> Tuk-tuk drivers claim temples are closed, offer alternate tours. It's a scam. Go directly to temples!
+                </div>
+
+                <div class="tips">
+                    <strong>⚠️ Gem Shop Scam:</strong> Avoid tuk-tuk recommendations for gem shops. Tourist ripoff.
+                </div>
+
+                <div class="tips">
+                    <strong>⚠️ Drink Spiking:</strong> Be careful accepting drinks from strangers. Stay in groups at night.
+                </div>
+
+                <h3>Money Tips</h3>
+                <div class="tips">
+                    <strong>💵 ATM Withdrawals:</strong> Bangkok has ATMs everywhere. Thai ATMs charge $2-3 fee but worth it for better exchange rates.
+                </div>
+
+                <div class="tips">
+                    <strong>💵 Currency Exchange:</strong> Exchange money at banks or money changers in shopping malls, not at airport (bad rates).
+                </div>
+
+                <h3>Cultural Tips</h3>
+                <div class="tips">
+                    <strong>🙏 Respect the Royals:</strong> Never disrespect the Thai royal family. Images on currency must be respected.
+                </div>
+
+                <div class="tips">
+                    <strong>🙏 Temple Dress Code:</strong> Wear long pants/skirt and covered shoulders when visiting temples.
+                </div>
+
+                <div class="tips">
+                    <strong>🙏 Shoe Removal:</strong> Always remove shoes when entering temples and many homes/shops.
+                </div>
+
+                <h3>Best Neighborhoods to Stay</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Area</th>
+                            <th>Vibe</th>
+                            <th>Budget Hotel Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Khao San</strong></td>
+                            <td>Party central, backpackers</td>
+                            <td>$10-20/dorm</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Silom</strong></td>
+                            <td>Nightlife, gay-friendly, nightlife</td>
+                            <td>$15-30</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sukhumvit</strong></td>
+                            <td>Modern, shopping, restaurants</td>
+                            <td>$20-40</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chinatown</strong></td>
+                            <td>Authentic, street food, markets</td>
+                            <td>$12-25</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thonburi</strong></td>
+                            <td>Local, riverside, quieter</td>
+                            <td>$15-28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>Bangkok 2026 Travel Guide | Last Updated September 2026</p>
+        <p>Prices and information subject to change. Always verify current rates before booking.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tab = button.getAttribute('data-tab');
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(tab).classList.add('active');
+                button.classList.add('active');
+            });
+        });
+
+        function calculateBudget() {
+            const days = parseInt(document.getElementById('days').value);
+            const accommodation = parseInt(document.getElementById('accommodation').value);
+            const dining = parseInt(document.getElementById('dining').value);
+            const activities = parseInt(document.getElementById('activities').value);
+            const other = parseInt(document.getElementById('other').value);
+
+            const accCost = days * accommodation;
+            const diningCost = days * dining;
+            const actCost = days * activities;
+            const otherCost = days * other;
+            const total = accCost + diningCost + actCost + otherCost;
+
+            document.getElementById('accCost').textContent = '$' + accCost.toFixed(2);
+            document.getElementById('diningCost').textContent = '$' + diningCost.toFixed(2);
+            document.getElementById('actCost').textContent = '$' + actCost.toFixed(2);
+            document.getElementById('otherCost').textContent = '$' + otherCost.toFixed(2);
+            document.getElementById('totalCost').textContent = '$' + total.toFixed(2);
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

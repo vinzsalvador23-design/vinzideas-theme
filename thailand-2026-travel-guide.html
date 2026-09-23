@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thailand 2026 Complete Travel Guide - Budget Breakdown & Itineraries</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066cc;
+            --secondary: #00a86b;
+            --warning: #ff6b35;
+            --light: #f5f5f5;
+            --dark: #1a1a1a;
+            --text: #333;
+            --border: #e0e0e0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #e0e0e0;
+                --light: #222;
+                --border: #444;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff1493 0%, #ff6b35 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .nav-tabs button {
+            background: none;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-tabs button.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cost-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .cost-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-top: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            table {
+                background: #333;
+            }
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:hover {
+            background: rgba(0,0,0,0.02);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            tr:hover {
+                background: rgba(255,255,255,0.05);
+            }
+        }
+
+        .calculator-section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .calculator-section {
+                background: #333;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+            background: var(--light);
+            color: var(--text);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .result-box {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-top: 0.5rem;
+        }
+
+        .itinerary {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .itinerary-day {
+            background: white;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .itinerary-day {
+                background: #333;
+            }
+        }
+
+        .itinerary-day h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(0,102,204,0.1), rgba(0,168,107,0.1));
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .tips {
+            background: rgba(255, 107, 53, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+
+        .tips strong {
+            color: var(--warning);
+        }
+
+        .region-card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .region-card {
+                background: #333;
+                border-color: #555;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #999;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🇹🇭 Thailand 2026 Complete Travel Guide</h1>
+        <p>All Regions, Budget Breakdown, Multiple Itineraries & Cost Calculator</p>
+    </header>
+
+    <div class="container">
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="regions">Regions</button>
+            <button class="tab-btn" data-tab="costs">Costs</button>
+            <button class="tab-btn" data-tab="itineraries">Itineraries</button>
+            <button class="tab-btn" data-tab="calculator">Calculator</button>
+            <button class="tab-btn" data-tab="tips">Tips</button>
+        </div>
+
+        <!-- OVERVIEW TAB -->
+        <div id="overview" class="tab-content active">
+            <section>
+                <h2>Welcome to Thailand: Land of Smiles</h2>
+                <p>Thailand is Southeast Asia's most popular tourist destination and one of the world's best-value travel spots. From ornate temples to pristine beaches, bustling cities to serene mountains, Thailand offers incredible experiences at unbeatable prices. In 2026, you can live like a king on a backpacker's budget - expect to spend just $20-35 daily for an amazing experience.</p>
+
+                <div class="highlight">
+                    <strong>Quick Facts:</strong>
+                    <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Currency: Thai Baht (THB) - 1 USD ≈ 33-35 THB (2026)</li>
+                        <li>Languages: Thai (English limited outside tourist areas)</li>
+                        <li>Best Time: November-February (dry season)</li>
+                        <li>Visa: 30 days visa-free for many nationalities</li>
+                        <li>Safety: Very safe for tourists</li>
+                        <li>Population: 71 million</li>
+                        <li>Capital: Bangkok (10 million people)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Thailand by the Numbers (2026)</h2>
+                <div class="cost-grid">
+                    <div class="cost-item">
+                        <strong>Daily Budget (Backpacker)</strong>
+                        <div class="cost-value">$20-35</div>
+                    </div>
+                    <div class="cost-item">
+                        <strong>Daily Budget (Mid-Range)</strong>
+                        <div class="cost-value">$60-100</div>
+                    </div>
+                    <div class="cost-item">
+                        <strong>10-Day Trip Average</strong>
+                        <div class="cost-value">$300-500</div>
+                    </div>
+                    <div class="cost-item">
+                        <strong>Best Value Region</strong>
+                        <div class="cost-value">Northern Thailand</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Getting to Thailand</h2>
+                <p><strong>Main Entry Point:</strong> Bangkok's Suvarnabhumi International Airport (BKK) is Thailand's hub. Numerous airlines (Thai Airways, Scoot, AirAsia, Nok Air) connect Bangkok to the world.</p>
+
+                <p><strong>Flight Costs to Bangkok (2026):</strong></p>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li>From Europe: $500-900</li>
+                    <li>From USA: $600-1000</li>
+                    <li>From Southeast Asia: $30-150</li>
+                    <li>Airport to Bangkok city: Bus $3, train $4, taxi $15-25</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- REGIONS TAB -->
+        <div id="regions" class="tab-content">
+            <section>
+                <h2>Thailand's Best Regions</h2>
+
+                <div class="region-card">
+                    <h3>🏙️ Bangkok - The Capital</h3>
+                    <p><strong>Best For:</strong> First-time visitors, foodies, culture seekers</p>
+                    <p><strong>Daily Budget:</strong> $25-40</p>
+                    <p><strong>Must-See:</strong> Grand Palace, Wat Pho, Floating Markets, Chinatown, Night Bazaars</p>
+                    <p><strong>Time to Spend:</strong> 3-5 days</p>
+                    <p>Bangkok is overwhelming, chaotic, and absolutely magical. Street food is world-class, temples are breathtaking, and the energy is intoxicating. Don't miss it!</p>
+                </div>
+
+                <div class="region-card">
+                    <h3>🏞️ Northern Thailand - Chiang Mai & Chiang Rai</h3>
+                    <p><strong>Best For:</strong> Budget travelers, trekkers, elephant sanctuaries</p>
+                    <p><strong>Daily Budget:</strong> $15-25</p>
+                    <p><strong>Must-See:</strong> Doi Suthep Temple, Old City, Night Bazaar, Elephant camps, Trekking</p>
+                    <p><strong>Time to Spend:</strong> 4-7 days</p>
+                    <p>Cheapest region in Thailand with the best prices on accommodation and food. Perfect for trekking, temple visits, and experiencing authentic Thai culture. Cooler weather than south.</p>
+                </div>
+
+                <div class="region-card">
+                    <h3>🏖️ Central Thailand - Hua Hin & Pattaya</h3>
+                    <p><strong>Best For:</strong> Beach lovers, day trips from Bangkok</p>
+                    <p><strong>Daily Budget:</strong> $25-35</p>
+                    <p><strong>Must-See:</strong> Beaches, Cicada Market, Water sports, Seafood markets</p>
+                    <p><strong>Time to Spend:</strong> 2-3 days</p>
+                    <p>Closer and cheaper alternatives to southern islands. Good beaches with fewer tourists than Phuket. Easy day trips from Bangkok via train or bus.</p>
+                </div>
+
+                <div class="region-card">
+                    <h3>🏝️ Southern Thailand - Phuket, Krabi & Islands</h3>
+                    <p><strong>Best For:</strong> Beach holidays, island hopping, diving</p>
+                    <p><strong>Daily Budget:</strong> $30-50</p>
+                    <p><strong>Must-See:</strong> Phi Phi Islands, Phuket beaches, Rock climbing, Snorkeling</p>
+                    <p><strong>Time to Spend:</strong> 5-7 days</p>
+                    <p>Thailand's most famous beach region. Phuket is expensive and touristy, but Krabi and nearby islands are stunning and more affordable. Perfect for beach relaxation and water activities.</p>
+                </div>
+
+                <div class="region-card">
+                    <h3>🕯️ Northeastern Thailand - Isan</h3>
+                    <p><strong>Best For:</strong> Adventurous travelers, Khmer ruins, local culture</p>
+                    <p><strong>Daily Budget:</strong> $15-25</p>
+                    <p><strong>Must-See:</strong> Khao Yai National Park, Mekong River, Local markets</p>
+                    <p><strong>Time to Spend:</strong> 3-5 days</p>
+                    <p>Least touristy region with authentic Thai experience. Home to Khao Yai National Park and Khmer temple ruins. Cheapest accommodation and food in Thailand.</p>
+                </div>
+
+                <div class="region-card">
+                    <h3>📚 Central Plains - Ayutthaya & Ancient Capitals</h3>
+                    <p><strong>Best For:</strong> History lovers, day trips from Bangkok</p>
+                    <p><strong>Daily Budget:</strong> $20-30</p>
+                    <p><strong>Must-See:</strong> Ayutthaya Historical Park, Ancient temples, River cruises</p>
+                    <p><strong>Time to Spend:</strong> 1-2 days</p>
+                    <p>UNESCO World Heritage site with stunning temple ruins. Perfect 1-2 day side trip from Bangkok. Great for history enthusiasts and photographers.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- COSTS TAB -->
+        <div id="costs" class="tab-content">
+            <section>
+                <h2>Complete Thailand Cost Breakdown</h2>
+
+                <h3>Accommodation Costs by Region</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Region</th>
+                            <th>Dorm</th>
+                            <th>Private Room</th>
+                            <th>Hotel (3-star)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Bangkok</strong></td>
+                            <td>$10-15</td>
+                            <td>$20-35</td>
+                            <td>$50-100</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chiang Mai</strong></td>
+                            <td>$6-10</td>
+                            <td>$12-20</td>
+                            <td>$30-50</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Krabi/Phuket</strong></td>
+                            <td>$10-18</td>
+                            <td>$20-40</td>
+                            <td>$60-120</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Koh Samui</strong></td>
+                            <td>$12-20</td>
+                            <td>$30-50</td>
+                            <td>$80-150</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Northeastern (Isan)</strong></td>
+                            <td>$5-8</td>
+                            <td>$10-15</td>
+                            <td>$25-40</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ayutthaya</strong></td>
+                            <td>$8-12</td>
+                            <td>$15-25</td>
+                            <td>$35-60</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Food Costs by Type</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Food Type</th>
+                            <th>Price (USD)</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Street Food Stall</strong></td>
+                            <td>$0.50-1.50</td>
+                            <td>Pad Thai, satay, mango sticky rice, banana pancakes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Local Restaurant Meal</strong></td>
+                            <td>$1.50-3</td>
+                            <td>Rice with curry, fresh fish, Khao pad (fried rice)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Night Market Meal</strong></td>
+                            <td>$2-5</td>
+                            <td>Tom Yum soup, grilled fish, local specialties</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tourist Restaurant</strong></td>
+                            <td>$5-15</td>
+                            <td>Western food, nice ambiance, seafood</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Daily Food Budget</strong></td>
+                            <td>$8-15</td>
+                            <td>Mix of street food and local restaurants</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Activities & Attractions</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>Cost (USD)</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Temple Visit</strong></td>
+                            <td>FREE-5</td>
+                            <td>All regions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trekking Tour</strong></td>
+                            <td>$15-30</td>
+                            <td>Chiang Mai, Pai</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Island Hopping</strong></td>
+                            <td>$15-35</td>
+                            <td>Phuket, Krabi, Koh Samui</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scuba Diving</strong></td>
+                            <td>$40-80</td>
+                            <td>Phuket, Koh Tao, Krabi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Elephant Sanctuary</strong></td>
+                            <td>$50-100</td>
+                            <td>Chiang Mai</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thai Massage</strong></td>
+                            <td>$5-10</td>
+                            <td>All cities</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Muay Thai Fight</strong></td>
+                            <td>$15-35</td>
+                            <td>Bangkok, Chiang Mai</td>
+                        </tr>
+                        <tr>
+                            <td><strong>National Parks</strong></td>
+                            <td>$5-15</td>
+                            <td>All regions</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Transportation Costs</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transport Type</th>
+                            <th>Cost (USD)</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Long-Distance Bus</strong></td>
+                            <td>$5-20</td>
+                            <td>Between cities, comfortable with A/C</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Train</strong></td>
+                            <td>$5-30</td>
+                            <td>Bangkok to Chiang Mai, scenic journeys</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Domestic Flight</strong></td>
+                            <td>$30-80</td>
+                            <td>Budget airlines like AirAsia, Nok Air</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Taxi/Tuk-Tuk (City)</strong></td>
+                            <td>$1-5</td>
+                            <td>Short distances within cities</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Minivan/Songthaew</strong></td>
+                            <td>$1-3</td>
+                            <td>Local shared transport</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ferry to Islands</strong></td>
+                            <td>$3-15</td>
+                            <td>Regular boats between islands</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <!-- ITINERARIES TAB -->
+        <div id="itineraries" class="tab-content">
+            <section>
+                <h2>Thailand Itinerary Options</h2>
+
+                <h3>Classic 10-Day Itinerary (Bangkok → Chiang Mai → Beach)</h3>
+                <div class="itinerary">
+                    <div class="itinerary-day">
+                        <h4>Days 1-3: Bangkok</h4>
+                        <p>Grand Palace, Wat Pho, Floating Markets, street food tours, night bazaars, MRT exploration</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Days 4-7: Chiang Mai</h4>
+                        <p>Doi Suthep temple, old city exploration, night bazaar, trekking (optional), elephant sanctuary, Thai cooking class</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Days 8-10: Krabi/Phuket</h4>
+                        <p>Island hopping, Phi Phi Islands, rock climbing, beach relaxation, sunset viewing</p>
+                    </div>
+                </div>
+                <p><strong>Total Cost Estimate:</strong> Backpacker $250-350 | Mid-range $700-1000</p>
+
+                <h3>Budget 7-Day Route (Northern Focus)</h3>
+                <div class="itinerary">
+                    <div class="itinerary-day">
+                        <h4>Days 1-2: Bangkok</h4>
+                        <p>Quick highlights - temples, markets, street food</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Days 3-7: Chiang Mai & Pai</h4>
+                        <p>Temples, trekking, elephant sanctuary, local markets, cheaper food and accommodation</p>
+                    </div>
+                </div>
+                <p><strong>Total Cost Estimate:</strong> Backpacker $150-200 | Mid-range $450-600</p>
+
+                <h3>Beach Paradise 7-Day Itinerary</h3>
+                <div class="itinerary">
+                    <div class="itinerary-day">
+                        <h4>Day 1: Bangkok Transit</h4>
+                        <p>Arrive, quick temple visit, overnight bus to south</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Days 2-4: Krabi</h4>
+                        <p>Rock climbing, beach relaxation, island exploration</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Days 5-7: Koh Samui or Koh Tao</h4>
+                        <p>Diving, beach hopping, party scene (optional)</p>
+                    </div>
+                </div>
+                <p><strong>Total Cost Estimate:</strong> Backpacker $300-400 | Mid-range $800-1200</p>
+
+                <h3>Adventure Seeker 14-Day Route</h3>
+                <div class="itinerary">
+                    <div class="itinerary-day">
+                        <h4>Days 1-2: Bangkok</h4>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Days 3-5: Chiang Mai</h4>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Days 6-7: Pai & Trekking</h4>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Days 8-10: Khao Yai National Park</h4>
+                        <p>Jungle safari, wildlife spotting, adventure activities</p>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4>Days 11-14: Krabi/Phuket Islands</h4>
+                    </div>
+                </div>
+                <p><strong>Total Cost Estimate:</strong> Backpacker $400-550 | Mid-range $1200-1700</p>
+            </section>
+        </div>
+
+        <!-- CALCULATOR TAB -->
+        <div id="calculator" class="tab-content">
+            <section>
+                <h2>Thailand Trip Budget Calculator</h2>
+                <p>Estimate your total Thailand travel cost based on your preferences and trip length.</p>
+
+                <div class="calculator-section">
+                    <div class="form-group">
+                        <label for="days">Total Days in Thailand:</label>
+                        <input type="number" id="days" value="10" min="1" max="90">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="region">Primary Region(s):</label>
+                        <select id="region">
+                            <option value="Bangkok">Bangkok (Expensive)</option>
+                            <option value="Northern">Northern Thailand (Budget-Friendly)</option>
+                            <option value="Beach">Beach/Islands (Mid-Range)</option>
+                            <option value="Mixed" selected>Mixed (Bangkok + North + Beach)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Travel Style:</label>
+                        <select id="budget">
+                            <option value="backpacker">Backpacker ($25/day)</option>
+                            <option value="midrange" selected>Mid-Range ($75/day)</option>
+                            <option value="comfort">Comfort ($150/day)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activities">Activity Level:</label>
+                        <select id="activities">
+                            <option value="low">Relaxation Focus</option>
+                            <option value="medium" selected>Moderate Activities</option>
+                            <option value="high">Adventure/Full Schedule</option>
+                        </select>
+                    </div>
+
+                    <button onclick="calculateThailand()">Calculate Total Cost</button>
+
+                    <div id="result" class="result-box" style="display:none;">
+                        <strong>Your Estimated Total Cost:</strong>
+                        <div class="result-value" id="totalCost">$0</div>
+                        <p style="margin-top: 1rem;">
+                            <strong>Breakdown:</strong><br>
+                            Accommodation: <span id="accCost">$0</span><br>
+                            Food & Dining: <span id="foodCost">$0</span><br>
+                            Activities: <span id="actCost">$0</span><br>
+                            Transport: <span id="transCost">$0</span><br>
+                            <br>
+                            <strong>This estimate includes:</strong><br>
+                            • International flight to Bangkok: NOT included<br>
+                            • Local flights/buses between cities: Included<br>
+                            • Meals and activities as selected<br>
+                            • Accommodation as selected
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TIPS TAB -->
+        <div id="tips" class="tab-content">
+            <section>
+                <h2>Essential Tips for Thailand</h2>
+
+                <h3>Money-Saving Strategies</h3>
+                <div class="tips">
+                    <strong>🍜 Street Food Only:</strong> Ignore restaurants. Thai street food is world-class at $0.50-1.50 per dish. This alone saves 70% on food costs.
+                </div>
+
+                <div class="tips">
+                    <strong>💰 Long-Distance Buses:</strong> Overnight buses save hotel nights while getting to destination. $5-20 for 8-10 hours of travel.
+                </div>
+
+                <div class="tips">
+                    <strong>💰 Dormitory Rooms:</strong> Thai hostels are clean and social. Save 50% vs private rooms while meeting other travelers.
+                </div>
+
+                <div class="tips">
+                    <strong>💰 Walk Everything:</strong> Most sights in cities are walkable. Skip taxis for short distances ($1-3 songthaews instead).
+                </div>
+
+                <h3>Safety Tips</h3>
+                <div class="tips">
+                    <strong>⚠️ Respect the Royals:</strong> Never disrespect Thai royal family or images. Penalties can be severe.
+                </div>
+
+                <div class="tips">
+                    <strong>⚠️ Scams in Bangkok:</strong> Tuk-tuk tours to gem shops are scams. Only use metered taxis or apps like Grab.
+                </div>
+
+                <div class="tips">
+                    <strong>⚠️ Night Safety:</strong> Thailand is safe, but avoid walking alone late at night in unfamiliar areas.
+                </div>
+
+                <h3>Cultural Etiquette</h3>
+                <div class="tips">
+                    <strong>🙏 Temple Dress Code:</strong> Wear long pants/skirt and covered shoulders. Remove shoes before entering.
+                </div>
+
+                <div class="tips">
+                    <strong>🙏 Wai Greeting:</strong> Respectful Thai greeting with hands pressed together. Use when thanking locals.
+                </div>
+
+                <div class="tips">
+                    <strong>🙏 Feet Matter:</strong> Feet are considered low/disrespectful. Never point feet at Buddha images or people.
+                </div>
+
+                <h3>Best Time to Visit</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Period</th>
+                            <th>Weather</th>
+                            <th>Prices</th>
+                            <th>Crowds</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nov-Feb</strong></td>
+                            <td>Best (Cool & Dry)</td>
+                            <td>Higher</td>
+                            <td>Peak Season</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mar-May</strong></td>
+                            <td>Hot & Dry</td>
+                            <td>Moderate</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jun-Oct</strong></td>
+                            <td>Rainy</td>
+                            <td>Lowest (Best Budget!)</td>
+                            <td>Low</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Packing Essentials</h3>
+                <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                    <li>Lightweight, breathable clothing</li>
+                    <li>Strong sunscreen (SPF 50+)</li>
+                    <li>Hat and sunglasses</li>
+                    <li>Comfortable walking shoes</li>
+                    <li>Light rain jacket (monsoon season)</li>
+                    <li>Adapter for Thai plugs (2 round pins)</li>
+                    <li>Power bank for phone</li>
+                    <li>Travel insurance</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>Thailand 2026 Complete Travel Guide | Last Updated September 2026</p>
+        <p>Prices and information subject to change. Always verify current rates before booking.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const tab = button.getAttribute('data-tab');
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.getElementById(tab).classList.add('active');
+                button.classList.add('active');
+            });
+        });
+
+        function calculateThailand() {
+            const days = parseInt(document.getElementById('days').value);
+            const region = document.getElementById('region').value;
+            const budget = document.getElementById('budget').value;
+            const activities = document.getElementById('activities').value;
+
+            let dailyRate = 25;
+            if (budget === 'midrange') dailyRate = 75;
+            else if (budget === 'comfort') dailyRate = 150;
+
+            let activityMultiplier = 1;
+            if (activities === 'high') activityMultiplier = 1.3;
+            else if (activities === 'low') activityMultiplier = 0.8;
+
+            const accCost = days * (dailyRate * 0.35);
+            const foodCost = days * (dailyRate * 0.35);
+            const actCost = days * (dailyRate * 0.20) * activityMultiplier;
+            const transCost = days * (dailyRate * 0.10);
+            const total = accCost + foodCost + actCost + transCost;
+
+            document.getElementById('accCost').textContent = '$' + accCost.toFixed(0);
+            document.getElementById('foodCost').textContent = '$' + foodCost.toFixed(0);
+            document.getElementById('actCost').textContent = '$' + actCost.toFixed(0);
+            document.getElementById('transCost').textContent = '$' + transCost.toFixed(0);
+            document.getElementById('totalCost').textContent = '$' + total.toFixed(0);
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
