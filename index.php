@@ -65,18 +65,47 @@ get_header();
 		<section class="destinations-section">
 			<div class="container">
 				<h2 class="section-title">Explore Destinations</h2>
-				<div class="destinations-grid">
+				<div class="destinations-grid-new">
 					<?php
 					$categories = array( 'travel-in-philippines', 'thailand', 'vietnam', 'travel-in-singapore', 'cambodia', 'travel-in-malaysia' );
-					foreach ( $categories as $cat_slug ) :
+					$grid_sizes = array( 'featured', 'medium', 'medium', 'small', 'small', 'small' );
+					
+					foreach ( $categories as $index => $cat_slug ) :
 						$category = get_category_by_slug( $cat_slug );
 						if ( $category ) :
+							// Get featured image from latest post in category
+							$cat_posts = new WP_Query( array(
+								'category_name' => $cat_slug,
+								'posts_per_page' => 1,
+								'orderby' => 'date',
+								'order' => 'DESC',
+							) );
+							
+							$bg_image = 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), linear-gradient(to bottom, #4a90e2, #357abd)';
+							
+							if ( $cat_posts->have_posts() ) :
+								$cat_posts->the_post();
+								if ( has_post_thumbnail() ) :
+									$thumb_id = get_post_thumbnail_id();
+									$thumb_url = wp_get_attachment_image_src( $thumb_id, 'large' );
+									if ( $thumb_url ) :
+										$bg_image = 'linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url(' . esc_url( $thumb_url[0] ) . ')';
+									endif;
+								endif;
+								wp_reset_postdata();
+							else :
+								wp_reset_postdata();
+							endif;
+							
+							$size_class = isset( $grid_sizes[ $index ] ) ? $grid_sizes[ $index ] : 'small';
 							?>
-							<a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" class="destination-card">
-								<div class="destination-icon">📍</div>
-								<h3><?php echo esc_html( $category->name ); ?></h3>
-								<p><?php echo esc_html( $category->description ); ?></p>
-								<span class="post-count"><?php echo absint( $category->count ); ?> Articles</span>
+							<a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" class="destination-card destination-card-<?php echo esc_attr( $size_class ); ?>" style="background: <?php echo $bg_image; ?>; background-size: cover; background-position: center;">
+								<div class="destination-overlay">
+									<div class="destination-icon">📍</div>
+									<h3><?php echo esc_html( $category->name ); ?></h3>
+									<p><?php echo esc_html( $category->description ); ?></p>
+									<span class="post-count"><?php echo absint( $category->count ); ?> Articles</span>
+								</div>
 							</a>
 							<?php
 						endif;
