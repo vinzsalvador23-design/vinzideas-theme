@@ -1753,7 +1753,7 @@ textarea {
 	left: 0;
 	right: 0;
 	top: 0;
-	background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), transparent);
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), transparent);
 	color: white;
 	display: flex;
 	flex-direction: column;
@@ -1761,6 +1761,21 @@ textarea {
 	padding: 20px;
 	text-decoration: none;
 	transition: background 0.3s ease;
+}
+
+.destination-card h3 {
+	color: white;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.destination-card p {
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.destination-card .post-count {
+	color: #FFD700;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .destination-card {
@@ -1780,7 +1795,7 @@ textarea {
 }
 
 .destination-card:hover .destination-overlay {
-	background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), transparent);
 }
 
 /* Responsive Design */
